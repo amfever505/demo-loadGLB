@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>three.js</title>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/110/three.js"></script>
+		<!-- ar.js -->
+		<script src="https://raw.githack.com/AR-js-org/AR.js/3.3.2/three.js/build/ar.js"></script>
+	</head>
+	<body>
+		<h1>three.js .glbファイル読み込み</h1>
+		枠
+		<input type="color" id="waku" />
+		裏
+		<input type="color" id="ura" /><br />
+		<canvas id="c" style="width: 500px; height: 500px"></canvas>
+		<script src="./three.min.js"></script>
+		<script type="module" src="./GLTFLoader.js"></script>
+
+		<script type="module" src="./model.js"></script>
+		<script type="module">
+			import * as THREE from "./three.module.js";
+			import { OrbitControls } from "./OrbitControls.js";
+
+			// import model from "./model.js";
+			// init();
+
+			// async function init() {
+			// 	const canvas = document.querySelector("#c");
+			// 	const canvas = document.createElement("canvas");
+			// 	document.body.appendChild(canvas);
+			// 	const renderer = new THREE.WebGLRenderer({
+			// 		canvas,
+			// 		antialias: true,
+			// 	});
+			// 	const scene = new THREE.Scene();
+			// 	scene.background = new THREE.Color("white");
+			// 	const width = window.innerWidth / 2;
+			// 	const height = window.innerHeight / 1.5;
+
+			// 	renderer.setPixelRatio(1);
+			// 	renderer.setSize(width, height);
+
+			// 	const camera = new THREE.PerspectiveCamera(45, width / height, 1, 100);
+
+			// 	camera.position.set(0, 0, 50);
+
+			// 	const controls = new OrbitControls(camera, renderer.domElement);
+
+			// 	const light = new THREE.AmbientLight(0xffffff, 1);
+			// 	const spotlight = new THREE.SpotLight(
+			// 		0xffffff,
+			// 		1.5,
+			// 		30,
+			// 		Math.PI / 4,
+			// 		1,
+			// 		0
+			// 	);
+			// 	spotlight.position.set(0, 0, 60);
+			// 	scene.add(spotlight);
+			// 	scene.add(light);
+
+			// 	const loader = new GLTFLoader();
+			// 	const url = "./frame2_golden2.glb";
+			// 	const model = await (() => {
+			// 		return new Promise((resolve) => {
+			// 			loader.load(
+			// 				url,
+			// 				(gltf) => {
+			// 					resolve(gltf.scene);
+			// 				},
+			// 				(err) => {
+			// 					console.error(err);
+			// 				}
+			// 			);
+			// 		});
+			// 	})();
+
+			// 	model.traverse((object) => {
+			// 		if (object.isMesh) {
+			// 			object.material.color.setHex(0xcccccc);
+			// 			object.material.transparent = true;
+			// 			console.log(object.name);
+			// 			const Meshs = new Object();
+			// 			model.children
+			// 				.filter((child) => child.material)
+			// 				.forEach((ele) => {
+			// 					Meshs[ele.name] = ele.material.color;
+			// 				});
+			// 			console.log(Meshs);
+			// 		}
+			// 	});
+
+			// 	model.position.set(0, -30, -20);
+			// 	model.rotation.set(0, 0, 0);
+			// 	model.scale.set(0.8, 0.8, 0.8);
+			// 	scene.add(model);
+
+			// 	renderer.setAnimationLoop(tick);
+			// 	// document.body.appendChild(VRButton.createButton(renderer));
+
+			// 	function tick() {
+			// 		controls.update();
+			// 		if (model) {
+			// 			model.rotation.x += 0;
+			// 			model.rotation.y += 0;
+			// 			model.rotation.z += 0;
+			// 		}
+			// 		renderer.render(scene, camera);
+			// 	}
+
+			// 	// Mesh であるやつを取得
+			// 	console.log(model.children.filter((child) => child.material));
+			// }
+
+			// init();
+		</script>
+	</body>
+</html>
